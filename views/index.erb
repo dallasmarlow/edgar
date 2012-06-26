@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>edgar</title>
+    
+    <meta charset="utf-8">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      div.hero-unit {
+        margin-top: 10px;
+      }
+
+      footer.footer {
+        margin-top: 45px;
+        padding: 35px 0 36px;
+        border-top: 1px solid #E5E5E5;
+      }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">edgar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hero-unit">
+        <div class="row">
+          <div class="span8">
+            <form class="form-horizontal" method="post" enctype="multipart/form-data">
+              <fieldset>
+
+                <legend>Time Series</legend>
+                <div class="control-group">
+                  <label class="control-label" for="data">Data</label>
+                  <div class="controls">
+                    <input class="input-file" name="data" type="file">
+                    <p class="help-block">json file containing dataset</p>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="interval">Interval</label>
+                  <div class="controls">
+                    <select name="interval">
+                      <option>seconds</option>
+                      <option>minutes</option>
+                      <option>hours</option>
+                      <option>days</option>
+                      <option>weeks</option>
+                      <option>months</option>
+                    </select>
+                    <p class="help-block">unit of time after sampling</p>
+                  </div>
+                </div>                
+
+                <div class="control-group">
+                  <label class="control-label" for="frequency">Frequency</label>
+                  <div class="controls">
+                    <input type="text" class="input-medium" name="frequency">
+                    <p class="help-block">the number of observations per unit of time after sampling</p>
+                  </div>
+                </div>
+
+                <legend>Sample</legend>
+                <div class="control-group">
+                  <label class="control-label" for="sample_method">Method</label>
+                  <div class="controls">
+                    <select name="sample_method">
+                      <option>none</option>
+                      <option>mean</option>
+                      <option>median</option>
+                      <option>min</option>
+                      <option>max</option>
+                    </select>
+                    <p class="help-block"> </p>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="sample_points">Points</label>
+                  <div class="controls">
+                    <input type="text" class="input-small" name="sample_points">
+                    <p class="help-block">number of data points to reduce to one</p>
+                  </div>
+                </div>
+
+                <legend>Forecast</legend>
+                <div class="control-group">
+                  <label class="control-label" for="model">Model</label>
+                  <div class="controls">
+                    <select name="model">
+                      <option>automatic</option>
+                      <!-- <option>HoltWinters</option> -->
+                    </select>
+                    <p class="help-block">forecasting model</p>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="horizon">Horizon</label>
+                  <div class="controls">
+                    <input type="text" class="input-medium" name="horizon">
+                    <p class="help-block">number of data points to forecast</p>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="threshold">Threshold</label>
+                  <div class="controls">
+                    <input type="text" class="input-medium" name="threshold">
+                    <p class="help-block">forecast when a given threshold will be met</p>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Forecast</button>
+                </div>
+
+              </fieldset>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+      <p class="pull-right"><a href='#'>Back to Top</a> </p>
+    <p><a href="http://github.com/dallasmarlow/edgar">Source</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
+
