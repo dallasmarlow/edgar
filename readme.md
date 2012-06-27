@@ -1,7 +1,7 @@
 ## edgar
 capacity planning and time series forecasting service (using R)
 
-![](http://cl.ly/0c2W0p3x402I291j1t1v/Screen%20Shot%202012-06-26%20at%206.21.21%20PM.png)
+![](http://cl.ly/2N1w251Y2w3q3t222j3A/Screen%20Shot%202012-06-27%20at%2011.11.33%20AM.png)
 ![](http://cl.ly/0D0t1d3O0G201q0P3T10/Screen%20Shot%202012-06-26%20at%206.30.39%20PM.png)
 
 ## installation and requirements
