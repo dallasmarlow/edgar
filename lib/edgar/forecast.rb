@@ -13,9 +13,9 @@ module Edgar
     end
 
     def set_model
-      model, model_options = *options[:model] || Defaults.model
+      model  = options[:model] || Defaults.model
 
-      @model    = r.eval %Q[time_series_model <- #{statement(model, :time_series, model_options)}]
+      @model = r.eval %Q[time_series_model <- #{statement(model, :time_series, options[:model_options])}]
     end
 
     def set_forecast

@@ -28,6 +28,19 @@ module Edgar
         Time.now + ((index + 1) * intervals(interval))
       end
 
+      def model_option option
+        case option.to_sym
+        when :automatic
+          :Z
+        when :none
+          :N
+        when :additive
+          :A
+        when :multiplicative
+          :M
+        end
+      end
+
       def normalize_options params
         unless ['data', 'interval', 'frequency'].all? {|key| params.include? key}
           raise 'missing required fields for forecast'
@@ -36,6 +49,7 @@ module Edgar
         options = {
           :interval  => intervals(params['interval']),
           :frequency => params['frequency'].to_i,
+          :model_options => {},
         }
 
         unless params['sample_method'] == 'none'
@@ -48,6 +62,20 @@ module Edgar
 
         unless params['threshold'].empty?
           options[:threshold] = params['threshold'].to_f
+        end
+
+        unless params['damped'] == 'automatic'
+          options[:model_options][:damped] = params['damped'].upcase.to_sym
+        end
+
+        model_parameters_keys = ['error_type', 'trend_type', 'seasonal_type']
+
+        unless model_parameters_keys.all? {|param| params[param] == 'automatic'}
+          model_parameters = model_parameters_keys.collect do |param|
+            model_option params[param]
+          end.join
+
+          options[:model_options][:model] = %Q['#{model_parameters}']
         end
 
         options

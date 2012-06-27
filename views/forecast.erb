@@ -36,7 +36,7 @@
   <body>
     <div class="navbar navbar">
       <div class="navbar-inner">
-        <div class="container">
+        <div class="container" style="width:auto">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -68,8 +68,7 @@
       </thead>
       <tbody>
         <% @forecasts.each do |key, forecast| %>
-          <% unless forecast.include? :failed 
-            p forecast %>
+          <% unless forecast.include? :failed %>
             <tr>
               <td><%= key %></td>
               <td><a href="<%= forecast[:plot] %>">plot </a></td>

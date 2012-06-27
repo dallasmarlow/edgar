@@ -97,18 +97,55 @@
                   </div>
                 </div>
 
-                <legend>Forecast</legend>
+                <legend>Model</legend>
                 <div class="control-group">
-                  <label class="control-label" for="model">Model</label>
+                  <label class="control-label" for="seasonal_type">seasonal_type</label>
                   <div class="controls">
-                    <select name="model">
+                    <select name="seasonal_type">
                       <option>automatic</option>
-                      <!-- <option>HoltWinters</option> -->
+                      <option>none</option>
+                      <option>additive</option>
+                      <option>multiplicative</option>
                     </select>
-                    <p class="help-block">forecasting model</p>
                   </div>
                 </div>
 
+                <div class="control-group">
+                  <label class="control-label" for="error_type">error_type</label>
+                  <div class="controls">
+                    <select name="error_type">
+                      <option>automatic</option>
+                      <option>none</option>
+                      <option>additive</option>
+                      <option>multiplicative</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="trend_type">trend_type</label>
+                  <div class="controls">
+                    <select name="trend_type">
+                      <option>automatic</option>
+                      <option>none</option>
+                      <option>additive</option>
+                      <option>multiplicative</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="damped">damped</label>
+                  <div class="controls">
+                    <select name="damped">
+                      <option>automatic</option>
+                      <option>true</option>
+                      <option>false</option>
+                    </select>
+                  </div>
+                </div>
+
+                <legend>Forecast</legend>
                 <div class="control-group">
                   <label class="control-label" for="horizon">Horizon</label>
                   <div class="controls">
