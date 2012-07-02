@@ -68,7 +68,7 @@
       </thead>
       <tbody>
         <% @forecasts.each do |key, forecast| %>
-          <% unless forecast.include? :failed %>
+          <% unless forecast == :failed %>
             <tr>
               <td><%= key %></td>
               <td><a href="<%= forecast[:plot] %>">plot </a></td>
