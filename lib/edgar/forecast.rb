@@ -21,7 +21,7 @@ module Edgar
     def set_forecast
       set_model unless model
 
-      @horizon   = options[:horizon] || options[:frequency]
+      @horizon  = options[:horizon] || options[:frequency]
       @forecast = r.eval %Q[time_series_forecast <- #{statement(:forecast, :time_series_model, :h => horizon)}]
     end
 
