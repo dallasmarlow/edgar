@@ -41,7 +41,7 @@ Type 'q()' to quit R.
 ```
 
 ### Ruby
-  install a version of ruby 1.9.x (mri) using your prefered method, some examples:
+  install a version of ruby 1.9.x (yarv) using your prefered method, some examples:
 
   - https://github.com/sstephenson/rbenv/
   - https://rvm.io/
